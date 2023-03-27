@@ -1,4 +1,5 @@
 <?php
+
     // $lunchMen =  array("초밥", "유부초밥", "김밥", "냉면", "라면", "돈까스", "쫄면");
     // $randMenu = $lunchMen[array_rand($lunchMen)];
     // echo $randMenu;
@@ -36,16 +37,51 @@
     // $arrayName = array("key1" => "val1", "key2" => "var2" );
     // echo $arrayName["key1"];
 
-    $recipe = array("계란초밥" => "계란", "새우초밥" =>"새우", "장어초밥" =>"장어", "유부초밥" =>"유부", "연어초밥" =>"연어", "광어초밥" =>"광어", "참치초밥" =>"참치", "날치알초밥" =>"날치알", "문어초밥" =>"문어", "가리비초밥" =>"가리비", "북방조개초밥" => "북방조개");
+    $recipe = array(
+        "계란초밥" => "계란",
+        "새우초밥" => "새우",
+        "장어초밥" => "장어",
+        "유부초밥" => "유부",
+        "연어초밥" => "연어",
+        "광어초밥" => "광어",
+        "참치초밥" => "참치",
+        "날치알초밥" => "날치알",
+        "문어초밥" => "문어",
+        "가리비초밥" => "가리비",
+        "북방조개초밥" => "북방조개"
+    );
+
     $randomSushi = array_rand($recipe);
     $ingredient = $recipe[$randomSushi];
-    echo "메뉴: ",$randomSushi, ", 주재료: ", $ingredient, "\n";
+    echo "메뉴: ", $randomSushi, ", 주재료: ", $ingredient, "\n";
 
-    $multiDimention = array(
+$multiDimension = array(
     range(1, 20),
-    array("못 먹어", "맘껏 먹어")
-    );
-    echo "먹을 갯수: ", $multiDimention[0][9];
+    array("못 먹어", "맘껏 먹어"),
+    array(
+        array(30, 40, 100)
+    )
+);
 
-    //8번 출력 echo $arr_temp[1][3];
+$randMulti = $multiDimension[mt_rand(0, count($multiDimension) - 1)];
+$index1 = mt_rand(0, count($multiDimension[0]) - 1);
+$index2 = mt_rand(0, count($multiDimension[1]) - 1);
+$index3 = mt_rand(0, count($multiDimension[2][0]) - 1);
+
+// $randMulti = $multiDimension[0][$index1] . ' ' . $multiDimension[1][$index2] . ' ' . $multiDimension[2][0][$index3];
+$randMultiarray = array($multiDimension[0][$index1] , $multiDimension[1][$index2] , $multiDimension[2][0][$index3]);
+$randMulti = array_rand($randMultiarray);
+$randMultiVal = $randMultiarray[$randMulti];
+echo "먹을 갯수: ", $randMultiVal;
+
+
+
+
+
+
+
+
+    //echo "먹을 갯수: ", $multiDimention[2][0][2];
+
+    //arr_temp_3_c = array()
 ?>
