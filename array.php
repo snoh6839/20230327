@@ -55,25 +55,74 @@
     $ingredient = $recipe[$randomSushi];
     echo "메뉴: ", $randomSushi, ", 주재료: ", $ingredient, "\n";
 
-$multiDimension = array(
-    range(1, 20),
-    array("못 먹어", "맘껏 먹어"),
-    array(
-        array(30, 40, 100)
-    )
-);
+    $multiDimension = array(
+        range(1, 20),
+        array("못 먹어", "맘껏 먹어"),
+        array(
+            array(30, 40, 100)
+        )
+    );
 
-$randMulti = $multiDimension[mt_rand(0, count($multiDimension) - 1)];
-$index1 = mt_rand(0, count($multiDimension[0]) - 1);
-$index2 = mt_rand(0, count($multiDimension[1]) - 1);
-$index3 = mt_rand(0, count($multiDimension[2][0]) - 1);
+    $randMulti = $multiDimension[mt_rand(0, count($multiDimension) - 1)];
+    $index1 = mt_rand(0, count($multiDimension[0]) - 1);
+    $index2 = mt_rand(0, count($multiDimension[1]) - 1);
+    $index3 = mt_rand(0, count($multiDimension[2][0]) - 1);
 
-// $randMulti = $multiDimension[0][$index1] . ' ' . $multiDimension[1][$index2] . ' ' . $multiDimension[2][0][$index3];
-$randMultiarray = array($multiDimension[0][$index1] , $multiDimension[1][$index2] , $multiDimension[2][0][$index3]);
-$randMulti = array_rand($randMultiarray);
-$randMultiVal = $randMultiarray[$randMulti];
-echo "먹을 갯수: ", $randMultiVal;
+    // $randMulti = $multiDimension[0][$index1] . ' ' . $multiDimension[1][$index2] . ' ' . $multiDimension[2][0][$index3];
+    $randMultiarray = array($multiDimension[0][$index1] , $multiDimension[1][$index2] , $multiDimension[2][0][$index3]);
+    $randMulti = array_rand($randMultiarray);
+    $randMultiVal = $randMultiarray[$randMulti];
+    echo "먹을 갯수: ", $randMultiVal;
 
     //echo "먹을 갯수: ", $multiDimention[2][0][2];
     //arr_temp_3_c = array()
+
+    // $arr_dif1 = array("a","b","c");
+    // $arr_dif2 = array("a","b","d");
+
+    // $find_dif = array_diff($arr_dif1, $arr_dif2);
+    // print_r($find_dif);
+
+    $asort_example = array("a","r","d","e","g","w","q");
+    sort($asort_example);
+    print_r($asort_example);
+    rsort($asort_example);
+    print_r($asort_example);
+
+    ksort($recipe);
+    print_r($recipe);
+    krsort($recipe);
+    print_r($recipe);
+
+    $colors = array("red", "green", "blue", "yellow");
+
+    foreach ($colors as $value) {
+        echo "color : ".$value."\n";
+    }
+
+    $age = array("Peter" => "35", "Ben" => "37", "Joe" => "43");
+
+    foreach ($age as $key => $val) {
+        echo $key." : ".$val."\n";
+    }
+
+    // foreach ($age as $val) {
+    //     echo "나이 : ".$val."\n";
+    // }
+
+    $arr_ass_del = array(
+        "된찌" => "파",
+        "볶음밥" => "양파",
+        "삭제" => "값값",
+        "김치" => "마늘",
+        "비빔밥" => "참기름"
+    );
+    foreach ($arr_ass_del as $key => $val){
+        if ($key === "삭제") {
+        unset($arr_ass_del[$key]);
+    } else {
+        echo $key . " : " . $val . "\n";
+    }
+    }
+    var_dump($arr_ass_del);
 ?>
