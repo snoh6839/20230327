@@ -74,14 +74,6 @@ $randMulti = array_rand($randMultiarray);
 $randMultiVal = $randMultiarray[$randMulti];
 echo "먹을 갯수: ", $randMultiVal;
 
-
-
-
-
-
-
-
     //echo "먹을 갯수: ", $multiDimention[2][0][2];
-
     //arr_temp_3_c = array()
 ?>
